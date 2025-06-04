@@ -3,7 +3,7 @@ import Refetch from "../shared/refetch";
 import useSetting from "@/hooks/settings/useSettings";
 
 export default function Hero() {
-    const { data, isLoading, isFetching, refetch, isError } = useSetting('hero', {});
+    const { data, isLoading, isFetching, refetch, isError } = useSetting(`hero-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
 
   return (
     <section className="relative h-3/4 w-full min-h-96 flex justify-center items-center">

@@ -13,7 +13,7 @@ import useSetting from "@/hooks/settings/useSettings";
 export default function Home() {
 const [search, setSearch] = useState('');
 
-const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting("tour", {});
+const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting(`tour-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
 const { data, isLoading, isFetching, hasNextPage, fetchNextPage, refetch, isError } = useTour({"search": search, 'page_size': 6});
 const allTour = data?.pages?.flatMap(page => page?.data) || [];
 

@@ -10,7 +10,7 @@ import Refetch from "@/components/shared/refetch";
 
 export default function Home() {
 
-const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting("profile", {});
+const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting(`profile-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
 
 const backgroundStyle = setting?.value?.imageUrl 
     ? { backgroundImage: `url(${setting.value.imageUrl})` }

@@ -7,8 +7,8 @@ import Refetch from '../shared/refetch';
 
 export default function App() {
 
-  const { data, isLoading, isFetching, refetch, isError } = useSetting('service', {});
-  const { data: appSetting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError:isSettingError } = useSetting('app', {});
+  const { data, isLoading, isFetching, refetch, isError } = useSetting(`service-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
+  const { data: appSetting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError:isSettingError } = useSetting(`app-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
   return (
         <section className="flex mx-auto w-full justify-center my-3 fixed bottom-0 z-10 max-w-full dark:bg-gray-700 dark:border-gray-600 md:static md:grid md:grid-cols-8 md:gap-2 md:bg-transparent md:border-0">
             <div className='hidden md:flex flex-col col-span-8 gap-2 min-h-16 mb-4 justify-items-center items-center '>

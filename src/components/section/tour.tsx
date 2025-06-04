@@ -6,7 +6,7 @@ import Refetch from "../shared/refetch";
 
 const Tour = () => {
 
-    const { data, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError:isSettingError } = useSetting('tour', {});
+    const { data, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError:isSettingError } = useSetting(`tour-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
   
   return (
        <>

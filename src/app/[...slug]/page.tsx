@@ -36,7 +36,7 @@ interface DynamicPageProps {
 
 export default function DynamicPage({ params }: DynamicPageProps & PageProps) {
   const unwrappedParams = use(params);
-  const { data: menu } = useSetting('menu', {});
+  const { data: menu } = useSetting(`menu-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
   const path = unwrappedParams.slug || [];
   const menuItem = Array.isArray(menu?.value) ? findMenuItemByPath(menu.value, path) : null;
   const { data: staticPage, isLoading, isError, isFetching, refetch } = useStaticPage({}, menuItem?.staticPage || "");

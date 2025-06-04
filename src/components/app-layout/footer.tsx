@@ -7,7 +7,7 @@ import useSetting from "@/hooks/settings/useSettings";
 import Refetch from "../shared/refetch";
 
 const Footer = () => {
-    const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting("footer", {});
+    const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting(`footer-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
     return (
        <>
         <footer className="bg-gray-100 border-t-2 border-gray-200 shadow-lg dark:bg-gray-900 px-6 pb-24 md:pb-6 lg:px-0 py-6 w-full">

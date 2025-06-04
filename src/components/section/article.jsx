@@ -5,7 +5,7 @@ import useSetting from '@/hooks/settings/useSettings';
 import Refetch from '../shared/refetch';
 
 export default function Article() {
-  const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting("article", {});
+  const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting(`article-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
 
   const backgroundStyle = setting?.value?.imageUrl 
     ? { backgroundImage: `url(${setting.value.imageUrl})` }

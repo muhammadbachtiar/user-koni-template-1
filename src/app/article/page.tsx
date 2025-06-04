@@ -12,7 +12,7 @@ export default function Home() {
 const [categoryId, setCategoryId] = useState(0);
 const [search, setSearch] = useState('');
 
-const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting("article", {});
+const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting(`article-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
 const { data: articles, isLoading, isFetching, hasNextPage, fetchNextPage, refetch, isError } = useArticle({"search": search, "page_size": 6}, categoryId);
 const allArticles = articles?.pages.flatMap(page => page?.data) || [];
 

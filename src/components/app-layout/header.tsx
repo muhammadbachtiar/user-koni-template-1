@@ -9,7 +9,7 @@ import Refetch from "../shared/refetch";
 
 export default function Header() {
 
-    const { data: menu, isLoading, refetch, isFetching, isError } = useSetting('menu', {});
+    const { data: menu, isLoading, refetch, isFetching, isError } = useSetting(`menu-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
 
     const [searchValue, setSearchValue] = useState('');
     const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {

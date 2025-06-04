@@ -5,7 +5,7 @@ import useSetting from "@/hooks/settings/useSettings";
 import Refetch from "./refetch";
 
 export default function Logo() {
-  const { data: logo, isLoading, refetch, isFetching, isError } = useSetting('logo', {});
+  const { data: logo, isLoading, refetch, isFetching, isError } = useSetting(`logo-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
   
   return ( 
     <>
