@@ -61,7 +61,7 @@ export default function AsideContent({ children }: { children: React.ReactNode})
                                 height={720}
                                 priority 
                                 />
-                            <div className="absolute w-40 md:w-32 inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
+                            <div className="absolute w-40 md:w-32 inset-0 rounded-sm bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
                         </div>
                         <h5 className="text-md line-clamp-4 font-semibold hover:text-blue-500 ">
                           {article.title}
