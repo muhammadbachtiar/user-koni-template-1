@@ -170,7 +170,7 @@ return (
                   data.map((card: Infografis, index:number) => {
                       return (
                         <div key={card.slug} tabIndex={1}  onClick={()=> {setIsOpen(true); setCurrentIndex(index)}}>
-                          <div className="relative lg:px-2 group hover:scale-100 focus:scale-100 transition duration-300 ease-in-out"> 
+                          <div className="relative px-1 lg:px-2 group hover:scale-100 focus:scale-100 transition duration-300 ease-in-out"> 
                               <div className="relative flex justify-center overflow-hidden w-full h-full group rounded-2xl">
                                 <Image
                                     className="h-full w-full min-w-full md:min-h-96 object-cover transform group-hover:scale-110 group-focus:scale-110 transition duration-300 ease-in-out"
@@ -185,7 +185,7 @@ return (
                                   />
                               </div>
                               <div className="flex flex-col gap-2 px-2 mt-2 w-full h-full text-start items-end"> 
-                                <h5 className="text-lg text-start font-bold w-full mx-2 tracking-tighter text-gray-700 dark:text-white">{card.title}</h5>
+                                <h5 className="text-lg text-start font-bold w-full mx-2 tracking-tighter text-gray-700 dark:text-white line-clamp-3">{card.title}</h5>
                                 <p className="text-sm text-start font-semibold w-full mx-2 tracking-tighter text-gray-600 dark:text-white line-clamp-3">{card.description}</p>
                               </div>
                           </div>

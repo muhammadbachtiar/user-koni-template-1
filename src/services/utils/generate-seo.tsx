@@ -35,7 +35,7 @@ export type Video = BaseContent & {
 export type Content = Article | Infographic | Video
 
 export function getMetadataValue(meta: ContentMetadata[] | null, key: string): string | string[] | null {
-  if (!meta) return null;
+  if (!Array.isArray(meta) || meta.length === 0) return null;
   
   const entry = meta.find((item) => item.key === key);
   return entry ? entry.value : null;
