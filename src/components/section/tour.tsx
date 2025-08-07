@@ -18,7 +18,7 @@ const Tour = () => {
                         <div className="col-span-6 lg:col-span-3 xl:col-span-2 flex justify-center items-center dark:bg-gray-800 animate-pulse">
                             <div className="h-full w-full min-h-96 min-w-96 shadow-2xl backdrop-blur-2xl rounded-4xl bg-gray-300"></div>
                         </div>
-                        <div className="col-span-6 lg:col-span-3 xl:col-span-4 w-full rounded-lg dark:bg-gray-800 py-4 lg:py-12 pe-12 animate-pulse">
+                        <div className="col-span-6 lg:col-span-3 xl:col-span-4 w-full rounded-lg dark:bg-gray-800 py-4 lg:py-12 animate-pulse">
                             <div className="h-10 w-3/4 bg-gray-300 rounded mb-5"></div>
                             <div className="h-6 w-1/2 bg-gray-300 rounded mt-2"></div>
                             <div className="h-4 w-full bg-gray-300 rounded mt-2"></div>
@@ -33,9 +33,9 @@ const Tour = () => {
                         </div>
                     ) : (
                       <>
-                        <div className="col-span-6 lg:col-span-3 xl:col-span-2 flex justify-center items-center  dark:bg-gray-800">                  
+                        <div className="col-span-6 lg:col-span-3 xl:col-span-2 flex justify-center items-center dark:bg-gray-800">                  
                             <Image
-                                className="h-full w-full md:min-h-96 shadow-2xl backdrop-blur-2xl rounded-4xl"
+                                className="h-full w-full md:min-h-96 shadow-2xl backdrop-blur-2xl rounded-4xl aspect-video lg:aspect-square object-cover"
                                 src={data?.value?.imageUrl ?? '/images/unavailable-image.png'}
                                 alt="Tour Banner"
                                 width={500}
@@ -46,7 +46,7 @@ const Tour = () => {
                                 }}
                             />
                         </div>
-                        <div className="col-span-6 lg:col-span-3 xl:col-span-4 w-full rounded-lg dark:bg-gray-800 py-4 lg:py-12 pe-12">                  
+                        <div className="col-span-6 lg:col-span-3 xl:col-span-4 w-full rounded-lg dark:bg-gray-800 py-4 lg:py-12">                  
                             <h5 className="text-4xl font-bold mb-5 tracking-tighter text-gray-900 dark:text-white">{data?.value?.title ?? "[Judul wisata belum diatur]"}</h5>
                             <div className="flex items-center mt-2">
                                 <p className="my-0 text-lg font-semibold text-gray-900 dark:text-white">{data?.value?.subTitle ?? "[Sub judul wisata belum diatur]"}</p>

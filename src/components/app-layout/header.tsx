@@ -17,45 +17,45 @@ export default function Header() {
     };
     
   return (
-    <nav className="bg-white border-b-2 px-4 border-gray-300 flex items-center justify-between dark:bg-gray-900 w-full z-20 top-0 start-0 py-2 gap-y-2">
-        <div className="max-w-screen flex flex-wrap items-center justify-between w-full gap-y-2">
+    <nav className="bg-white border-b-2 py-4 border-gray-300 flex items-center justify-center dark:bg-gray-900 w-full z-20 top-0 start-0 gap-y-2">
+        <div className="w-full px-6 sm:px-0 max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl flex flex-wrap lg:flex-row items-center justify-between gap-2">
             <Logo/>
-            {   
-                isLoading ? (
-                    <div className="flex animate-pulse space-x-3">
-                        <div className="hidden md:flex flex-row gap-x-6">
-                            <div className=" h-4 w-24 rounded bg-gray-200"></div>
-                            <div className="h-4 w-24 rounded bg-gray-200"></div>
-                            <div className="h-4 w-24 rounded bg-gray-200"></div>
-                            <div className="h-4 w-24 rounded bg-gray-200"></div>
+                {   
+                    isLoading ? (
+                        <div className="flex animate-pulse space-x-3">
+                            <div className="hidden md:flex flex-row gap-x-6">
+                                <div className=" h-4 w-24 rounded bg-gray-200"></div>
+                                <div className="h-4 w-24 rounded bg-gray-200"></div>
+                                <div className="h-4 w-24 rounded bg-gray-200"></div>
+                                <div className="h-4 w-24 rounded bg-gray-200"></div>
+                            </div>
+                            <div className="flex md:hidden flex-row gap-x-6">
+                                <div className="h-10 w-10 rounded-2xl bg-gray-200"></div>
+                            </div>
                         </div>
-                        <div className="flex md:hidden flex-row gap-x-6">
-                            <div className="h-10 w-10 rounded-2xl bg-gray-200"></div>
-                        </div>
-                    </div>
-                ) : isError && !isFetching  ? (
-                    <Refetch refetch={refetch} />
-                ) : (
-                    <MainNav menuData={(menu?.value?.length > 0) ? menu.value
-                            :  [
-                                {
-                                    "order": 1,
-                                    "title": "Home",
-                                    "route": "/",
-                                    "staticPage": null,
-                                    "child": null
-                                },
-                                {
-                                    "order": 2,
-                                    "title": "Artikel",
-                                    "route": "/article",
-                                    "staticPage": null,
-                                    "child": null
-                                }
-                            ]}  />
-                )
-            }
-            <div className="items-center justify-between w-full flex lg:w-2xs md:order-3" id="navbar-sticky">
+                    ) : isError && !isFetching  ? (
+                        <Refetch refetch={refetch} />
+                    ) : (
+                        <MainNav menuData={(menu?.value?.length > 0) ? menu.value
+                                :  [
+                                    {
+                                        "order": 1,
+                                        "title": "Home",
+                                        "route": "/",
+                                        "staticPage": null,
+                                        "child": null
+                                    },
+                                    {
+                                        "order": 2,
+                                        "title": "Artikel",
+                                        "route": "/article",
+                                        "staticPage": null,
+                                        "child": null
+                                    }
+                                ]}  />
+                    )
+                }
+            <div className="items-center justify-between w-full lg:w-fit min-w-64 flex md:order-3" id="navbar-sticky">
                 <div className="relative w-full">
                     <input onChange={handleChange} id="search-dropdown" className="block p-2 w-full z-20 text-sm text-gray-900 bg-gray-200 rounded-e-xl rounded-s-xl border-s-2 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Apa yang Anda cari?" required />
                     {searchValue ? (

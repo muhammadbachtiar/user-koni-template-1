@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import type { MenuWithContent } from "@/types/menu"
 import { MenuItem } from "./menu-item"
 import { MobileSidebar } from "./mobile-sidebar"
@@ -15,22 +15,13 @@ interface MainNavProps {
 }
 
 export function MainNav({ menuData }: MainNavProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
 
   const sortedMenuItems = [...menuData].sort((a, b) => a.order - b.order)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
-    <nav className={classNames("relative z-10 transition-all duration-300", isScrolled && "shadow-sm")}>
+    <nav className={classNames("relative z-10 transition-all duration-300")}>
 
       <MobileSidebar menuData={menuData} setIsOpen={setIsOpen} isOpen={isOpen} />
 

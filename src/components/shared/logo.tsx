@@ -26,21 +26,17 @@ export default function Logo() {
             <Refetch refetch={refetch} />
           ) : (
               <>       
-                <Link href={"/"} className={`flex items-center px-2 py-1 space-x-3 rtl:space-x-reverse rounded-md hover:bg-gray-300 hover:scale-105 transition transform duration-300 ease-in-out`}>
+                <Link href={"/"} className={`flex items-center space-x-3 p-0.5 rtl:space-x-reverse rounded-md hover:bg-gray-100 hover:scale-105 transition transform duration-300 ease-in-out`}>
                     <Image
-                        className="h-1"
+                        className="w-[40px] mr-1 object-contain aspect-square"
                         src={logo?.value?.imageUrl ?? '/images/unavailable-image.png'}
                         alt="Logo"
                         width={500}
                         height={300}
-                        style={{
-                          width: "38px",
-                          height: "auto",
-                        }}
                       />
-                    <div className='flex flex-col justify-center items-center gap-1'>
-                        <span className={`self-start align-baseline text-md leading-3 tracking-tighter font-semibold uppercase text-black`}>{ logo?.value?.regionEntity ?? "[Judul logo belum diatur]"} </span>
-                        <span className={`self-start align-baseline text-xs leading-3 font-normal italic text-black`}>{ logo?.value?.regionDescription ?? "[Sub judul logo belum diatur]"} </span>
+                    <div className='flex flex-col justify-center items-start'>
+                        <span className={`font-bold text-md leading-5 text-start align-baseline text-md tracking-tighter text-black`}>{ logo?.value?.regionEntity ?? "[Judul logo belum diatur]"} </span>
+                        <span className={`text-xs font-semibold text-start align-baseline leading-3 italic text-black`}>{ logo?.value?.regionDescription ?? "[Sub judul logo belum diatur]"} </span>
                     </div>
                 </Link>
               </>

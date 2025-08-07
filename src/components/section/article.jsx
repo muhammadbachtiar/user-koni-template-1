@@ -25,7 +25,7 @@ export default function Article() {
                   </div>
               ) : (
                 <>
-                    <div style={backgroundStyle} className={`relative bg-cover bg-bottom h-60 flex flex-col col-span-8 gap-2 mb-4 justify-items-center items-center`}>
+                    <div style={backgroundStyle} className={`relative bg-cover bg-bottom h-40 md:h-60 flex flex-col col-span-8 gap-2 mb-4 justify-items-center items-center`}>
                         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
                         <div className="relative h-full flex flex-col justify-center items-center px-8 md:px-24 xl:px-56 text-center py-16 lg:py-32 gap-4">
                             <h2 className="self-center text-4xl text-white font-bold ">{setting?.value?.title || "[Judul artikel belum diatur]"}</h2>

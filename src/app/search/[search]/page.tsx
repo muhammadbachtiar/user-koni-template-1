@@ -30,10 +30,10 @@ export default function Home({ params }: DynamicPageProps & PageProps) {
 
   return (
       <>
-         <div className="min-h-screen p-4 md:p-12 w-full">
-            <div className="col-span-6 grid grid-cols-6 gap-x-4 gap-y-8">
+         <div className="min-h-screen flex justify-center w-full">
+            <div className="w-full px-6 sm:px-0 max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl col-span-6 grid grid-cols-6 gap-x-4 gap-y-8">
                 <div className="relative w-full col-span-6">
-                    <input id="search-dropdown"value={searchValue} onChange={handleChange} className="block py-3 pe-12 px-5 w-full rounded-sm text-sm text-gray-900 bg-gray-100 placeholder:text-black border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Cari judul ..." />
+                    <input id="search-dropdown"value={searchValue} onChange={handleChange} className="block py-3 px-5 pe-12 w-full rounded-sm text-sm text-gray-900 bg-gray-100 placeholder:text-black border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Cari judul ..." />
                     <span className="absolute top-0 end-0 py-3 px-5 sm:ms-4 text-sm font-medium h-full text-white focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                             <path stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
@@ -56,7 +56,7 @@ export default function Home({ params }: DynamicPageProps & PageProps) {
                         </ul>
                     </div>
                 </div>
-                <div className="relative w-full col-span-6 grid grid-cols-6 gap-y-8 md:col-span-4 lg:col-span-5 max-h-[80vh] overflow-y-auto">
+                <div className="relative w-full col-span-6 grid grid-cols-6 gap-y-8 md:col-span-4 lg:col-span-5 overflow-y-auto">
                     <div className="col-span-6">
                         <div className="col-span-6">
                             <span id="article" className="self-center align-baseline text-2xl leading-3 tracking-tighter font-semibold uppercase text-black">Artikel</span>
@@ -86,7 +86,7 @@ export default function Home({ params }: DynamicPageProps & PageProps) {
                                 </div>
                                 ) : (
                                 articles?.pages[0].data.map((article, index) => (
-                                    <Link  key={article.id} href={`/article/${article.slug}`} tabIndex={1} className="col-span-6 md:col-span-3 px-3 md:px-0 lg:col-span-2 w-full">
+                                    <Link  key={article.id} href={`/article/${article.slug}`} tabIndex={1} className="col-span-6 md:col-span-3  lg:col-span-2 w-full">
                                                 <div
                                                 className={`flex flex-col py-3 ${
                                                     index % 2 === 0 ? 'bg-gray-50' : ''

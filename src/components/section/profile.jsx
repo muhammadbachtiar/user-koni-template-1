@@ -12,7 +12,7 @@ export default function Profile() {
   const TabListName = [
     {
       name: 'Kata Sambutan',
-      content: <div style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }} className="bg-gray-50 dark:bg-gray-700 rounded-2xl min-h-[400px] max-h-screen overflow-y-scroll flex flex-col items-center space-y-6">
+      content: <div style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }} className="bg-gray-50 dark:bg-gray-700 rounded-2xl min-h-[400px] max-h-screen overflow-y-scroll flex flex-col items-center justify-center space-y-6">
                   {isvillageProgramLoading || isvillageProgramFetching && !welcomeMessage ? (
                          <></>
                     ) : !isWellcomeMessageError && !isvillageProgramFetching && !welcomeMessage? (

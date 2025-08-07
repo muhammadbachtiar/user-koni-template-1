@@ -51,6 +51,7 @@ function SamplePrevArrow(props: SliderButtonProps) {
 }  
     
 const settings = {
+    centerMode:false,
     dots: true,
     infinite: isInfinite,
     speed: 500,
@@ -62,7 +63,7 @@ const settings = {
         breakpoint: 1280,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 3,
         }
       },
       {
@@ -117,7 +118,7 @@ return (
         <div>
             <Slider {...settings}>
                {
-                isLoading || (isFetching && (!dataArticles || (!Array.isArray(dataArticles) || dataArticles.length === 0)))  ? (
+                isLoading || (isFetching &&  (!dataArticles || (!Array.isArray(dataArticles) || dataArticles.length === 0)))   ? (
                   Array.from({ length: 4 }).map((_, index) => (
                     <div key={index} className="flex px-3 animate-pulse w-full">
                       <div className="h-64 w-full flex-1 rounded-2xl bg-gray-200"></div>

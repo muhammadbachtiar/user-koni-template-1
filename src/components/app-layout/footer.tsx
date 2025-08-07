@@ -10,13 +10,13 @@ const Footer = () => {
     const { data: setting, isLoading: isSettingLoading, isFetching: isSettingFetching, refetch: refetchSetting, isError: isSettingError } = useSetting(`footer-${process.env.NEXT_PUBLIC_VILLAGE_ID}`, {});
     return (
        <>
-        <footer className="bg-gray-100 border-t-2 border-gray-200 shadow-lg dark:bg-gray-900 px-6 pb-24 md:pb-6 lg:px-0 py-6 w-full">
-            <div className="w-full">
-                <div className="grid grid-cols-4 gap-y-5 items-center justify-start mx-0 lg:mx-16">
+        <footer className="flex justify-center bg-gray-100 border-t-2 border-gray-200 shadow-lg dark:bg-gray-900 pb-24 md:pb-6 py-6 w-full">
+            <div className="w-full px-6 sm:px-0 max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+                <div className="grid grid-cols-4 gap-y-5 items-center justify-start">
                     {
                         isSettingLoading || (isSettingFetching && !setting?.value) ? (
                             <>
-                                 <div className="animate-pulse grid col-span-4 lg:col-span-3 grid-cols-4 gap-4 p-6">
+                                <div className="animate-pulse grid col-span-4 lg:col-span-3 grid-cols-4 gap-4 p-6">
                                         <div className="col-span-4 lg:col-span-2 flex flex-col gap-2">
                                             <div className="flex items-center gap-x-2">
                                             <div className="h-4 w-4 bg-gray-300 rounded"></div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { Fragment } from "react"
+import { Fragment, useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import type { MenuWithContent } from "@/types/menu"
@@ -18,9 +18,25 @@ export function MenuItem({ item, basePath = "", level = 0 }: MenuItemProps) {
   const fullPath = item.route ? `${basePath}${item.route}` : basePath
   const isActive = pathname === fullPath
   const hasChildren = item.child && item.child.length > 0
-  const isClickable =  item.route && item.staticPage !== null || !item.staticPage && !hasChildren;
+  const isClickable = item.route && item.staticPage !== null || !item.staticPage && !hasChildren;
   
-  const sortedChildren = item.child ? [...item.child].sort((a, b) => a.order - b.order) : []
+  const sortedChildren = item.child ? [...item.child].sort((a, b) => a.order - b.order) : [];
+  const [isOpen, setIsOpen] = useState(false);
+   useEffect(() => {
+    const html = document.documentElement;
+    if (isOpen) {
+      html.style.overflow = "";
+      html.style.paddingRight = "";
+    } else {
+      html.style.overflow = "";
+      html.style.paddingRight = "";
+    }
+
+    return () => {
+      html.style.overflow = "";
+      html.style.paddingRight = "";
+    };
+  }, [isOpen]);
   
   if (level > 0) {
     return (
@@ -80,6 +96,7 @@ export function MenuItem({ item, basePath = "", level = 0 }: MenuItemProps) {
                 "focus:outline-none text-gray-700 hover:border-b-2 hover:border-gray-300",
                 ${hasChildren ? "pr-1" : ""}`
               }
+              onClick={() => setIsOpen(!isOpen)}
             >
               {item.title}
               {hasChildren && (

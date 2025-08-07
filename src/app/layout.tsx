@@ -17,10 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata() {
-  try {
+   try {
     const logoResponse = await SettingService.getSetting (`logo-${process.env.NEXT_PUBLIC_VILLAGE_ID}`)
+    const heroResponse = await SettingService.getSetting (`hero-${process.env.NEXT_PUBLIC_VILLAGE_ID}`)
     return {
-      title: process.env.NEXT_PUBLIC_VILLAGE_NAME || "Desa Muara Enim",
+      title: logoResponse?.data?.value?.regionEntity || "Pemerintah Kabupaten Muara Enim",
+      description: heroResponse?.data?.value?.title + heroResponse?.data?.value?.description || "Pemerintah Kabupaten Muara Enim",
       icons: {
         icon: [
           new URL(logoResponse?.data?.value?.imageUrl)
@@ -29,7 +31,8 @@ export async function generateMetadata() {
     }
   } catch {
      return {
-      title: process.env.NEXT_PUBLIC_VILLAGE_NAME || "Desa Muara Enim",
+      title: process.env.NEXT_PUBLIC_VILLAGE_NAME || "Pemerintah Kabupaten Muara Enim",
+      description: "Pemerintah Kabupaten Muara Enim",
     }
   }
 }
@@ -48,11 +51,9 @@ export default function RootLayout({
         <ClientWrapper>
           <div className="min-h-screen min-w-full bg-primary flex flex-col justify-between items-start w-full">
                 <Header/>
-                  <div className="flex w-full border-gray-200 justify-center items-center pb-8 mx-auto md:px-12 lg:px-14 p-3">
-                    <main className="flex w-full flex-col gap-[56px] row-start-2 items-center sm:items-start">
-                      {children}
-                    </main>
-                  </div>
+                  <main className="flex flex-col justify-center items-center w-full mt-2 ">
+                    {children}
+                  </main>
                 <Footer/>
             </div>
             <Chatbot/>
