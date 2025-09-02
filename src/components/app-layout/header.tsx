@@ -55,9 +55,9 @@ export default function Header() {
                                 ]}  />
                     )
                 }
-                        <div className="items-center justify-between w-full lg:w-fit lg:min-w-64 flex md:order-3" id="navbar-sticky">
+            <div className="items-center justify-between w-full lg:max-w-56 flex md:order-3" id="navbar-sticky">
                 <div className="relative w-full">
-                    <input onChange={handleChange} id="search-dropdown" className="block p-2 w-full z-20 text-sm text-gray-900 bg-gray-200 rounded-e-xl rounded-s-xl border-s-2 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Apa yang Anda cari?" required />
+                    <input onChange={handleChange} id="search-dropdown" className="block p-2 pr-12 w-full z-20 text-sm text-gray-900 bg-gray-200 rounded-e-xl rounded-s-xl border-s-2 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Apa yang Anda cari?" required />
                     {searchValue ? (
                       <Link href={`/search/${searchValue}`}> 
                           <span className="absolute top-0 end-0 py-3 px-5 sm:ms-4 text-sm font-medium h-full text-black cursor-pointer rounded-e-xl border border-s-0 border-gray-300 hover:text-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

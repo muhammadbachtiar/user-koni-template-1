@@ -27,12 +27,12 @@ export function MainNav({ menuData }: MainNavProps) {
 
       <div className="hidden lg:block">
         <ul className="flex items-center space-x-1">
-          {sortedMenuItems.slice(0,5).map((item) => (
+          {sortedMenuItems.slice(0,4).map((item) => (
             <li key={`${item.title}-${item.order}`}>
               <MenuItem item={item} />
             </li>
           ))}
-          {sortedMenuItems.length > 5 && (
+          {sortedMenuItems.length > 4 && (
             <li className="relative">
               <button
                 onClick={() => setIsOpen(true)}
