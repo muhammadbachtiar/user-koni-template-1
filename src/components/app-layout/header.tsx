@@ -55,7 +55,7 @@ export default function Header() {
                                 ]}  />
                     )
                 }
-            <div className="items-center justify-between w-full lg:w-fit min-w-64 flex md:order-3" id="navbar-sticky">
+                        <div className="items-center justify-between w-full lg:w-fit lg:min-w-64 flex md:order-3" id="navbar-sticky">
                 <div className="relative w-full">
                     <input onChange={handleChange} id="search-dropdown" className="block p-2 w-full z-20 text-sm text-gray-900 bg-gray-200 rounded-e-xl rounded-s-xl border-s-2 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Apa yang Anda cari?" required />
                     {searchValue ? (

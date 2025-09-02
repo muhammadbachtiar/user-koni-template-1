@@ -30,10 +30,10 @@ export default function App() {
                     )
                 }
             </div>
-            <div className="max-w-screen overflow-x-auto mx-auto flex flex-row md:flex-wrap col-span-8 min-h-14 md:justify-center items-center h-full bg-gray-50 md:bg-transparent rounded-4xl font-medium gap-0 md:gap-4">
+            <div style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }} className="max-w-screen overflow-x-auto min-w-[calc(100vw-10%)] md:min-w-full px-4 md:px-0 flex flex-row md:flex-wrap col-span-8 min-h-14 justify-center-safe items-center h-full bg-gray-50 md:bg-transparent rounded-4xl font-medium gap-0 md:gap-4">
                     {
                         isLoading || (!data || !(Array.isArray(data?.value) && data?.value.length > 0)) && isFetching ? (
-                            <div className="flex w-full col-span-4 animate-pulse space-x-3">
+                            <div className="flex justify-center w-full col-span-4 animate-pulse space-x-3">
                                 {Array.from({length:4}).map((_, index) => (
                                     <div key={index} className="flex flex-col gap-4 mx-2 p-4 bg-gray-200 rounded-md w-20 md:w-40 h-14 md:h-40"></div>
                                 ))}
@@ -48,18 +48,18 @@ export default function App() {
                                 .map((item, index) => {
                                 const IconComponent = Icons[item.icon] ?? Icons.FaQuestion
                                 return item.link.startsWith("http") ? (
-                                   <a href={item.link} target='blank' key={index} rel="noopener noreferrer" className="group min-w-20 h-fit w-full md:min-w-40 md:w-fit max-w-60 inline-flex flex-col items-center justify-cente p-2 focus:ring-0 focus:bg-none md:col-span-2 md:rounded-lg md:justify-items-center md:bg-[#F7F7F7] dark:hover:bg-gray-800 md:focus:ring-2 md:focus:ring-gray-200 md:focus:bg-gray-100">
+                                   <a href={item.link} target='blank' key={index} rel="noopener noreferrer" className="group min-w-20 max-w-20  h-fit w-full md:min-w-40 md:w-fit md:max-w-60 inline-flex flex-col items-center justify-cente py-1.5 px-1 focus:ring-0 focus:bg-none md:col-span-2 md:rounded-lg md:justify-items-center md:bg-[#F7F7F7] dark:hover:bg-gray-800 md:focus:ring-2 md:focus:ring-gray-200 md:focus:bg-gray-100">
                                         <div className="relative md:py-2 overflow-hidden rounded-sm w-full flex justify-center group">
-                                            <IconComponent className='w-6 h-6 mb-1 object-cover transform group-hover:scale-110 group-focus:scale-125 md:group-focus:scale-110 transition duration-300 ease-in-out text-[#393E46] md:w-20 md:h-20 md:mb-2 md:selft-center group-hover:text-gray-700 group-focus:text-gray-700 dark:text-gray-400 dark:group-hover:text-blue-500'/> 
+                                            <IconComponent className='w-4 h-4 mb-1 object-cover transform group-hover:scale-110 group-focus:scale-125 md:group-focus:scale-110 transition duration-300 ease-in-out text-[#393E46] md:w-20 md:h-20 md:mb-2 md:selft-center group-hover:text-gray-700 group-focus:text-gray-700 dark:text-gray-400 dark:group-hover:text-blue-500'/> 
                                         </div>
-                                        <span className="text-sm md:max-w-32 line-clamp-2 text-black md:mb-2 md:text-md text-center md:font-bold md:tracking-tight group-focus:text-black dark:text-gray-400 dark:group-hover:text-blue-500">{item.title}</span>
+                                        <span className="text-xs md:max-w-32 line-clamp-2 text-black md:mb-2 md:text-md text-center md:font-bold md:tracking-tight group-focus:text-black dark:text-gray-400 dark:group-hover:text-blue-500">{item.title}</span>
                                     </a>
                                 ) : (
-                                     <Link href={item.link} key={index} className="group min-w-20 h-fit w-full md:min-w-40 md:w-fit max-w-60 inline-flex flex-col items-center justify-center p-2 focus:ring-0 focus:bg-none md:col-span-2 md:rounded-lg md:justify-items-center md:bg-[#F7F7F7] dark:hover:bg-gray-800 md:focus:ring-2 md:focus:ring-gray-200 md:focus:bg-gray-100">
+                                     <Link href={item.link} key={index} className="group min-w-20 max-w-20 h-fit w-full md:min-w-40 md:w-fit md:max-w-60 inline-flex flex-col items-center justify-center py-1.5 px-1 focus:ring-0 focus:bg-none md:col-span-2 md:rounded-lg md:justify-items-center md:bg-[#F7F7F7] dark:hover:bg-gray-800 md:focus:ring-2 md:focus:ring-gray-200 md:focus:bg-gray-100">
                                         <div className="relative md:py-2 overflow-hidden rounded-sm w-full flex justify-center group">
-                                            <IconComponent className='w-6 h-6 mb-1 object-cover transform group-hover:scale-110 group-focus:scale-125 md:group-focus:scale-110 transition duration-300 ease-in-out text-[#393E46] md:w-20 md:h-20 md:mb-2 md:selft-center group-hover:text-gray-700 group-focus:text-gray-700 dark:text-gray-400 dark:group-hover:text-blue-500'/> 
+                                            <IconComponent className='w-4 h-4 mb-1 object-cover transform group-hover:scale-110 group-focus:scale-125 md:group-focus:scale-110 transition duration-300 ease-in-out text-[#393E46] md:w-20 md:h-20 md:mb-2 md:selft-center group-hover:text-gray-700 group-focus:text-gray-700 dark:text-gray-400 dark:group-hover:text-blue-500'/> 
                                         </div>
-                                        <span className="text-sm md:max-w-32 line-clamp-2 text-black md:mb-2 md:text-md text-center md:font-bold md:tracking-tight group-focus:text-black dark:text-gray-400 dark:group-hover:text-blue-500">{item.title}</span>
+                                        <span className="text-xs md:max-w-32 line-clamp-2 text-black md:mb-2 md:text-md text-center md:font-bold md:tracking-tight group-focus:text-black dark:text-gray-400 dark:group-hover:text-blue-500">{item.title}</span>
                                     </Link>
                                 )
                             }

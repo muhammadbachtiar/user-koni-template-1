@@ -26,7 +26,7 @@ export default function Logo() {
             <Refetch refetch={refetch} />
           ) : (
               <>       
-                <Link href={"/"} className={`flex items-center space-x-3 p-0.5 rtl:space-x-reverse rounded-md hover:bg-gray-100 hover:scale-105 transition transform duration-300 ease-in-out`}>
+                <Link href={"/"} className={`flex items-center space-x-3 p-0.5 px-1 rtl:space-x-reverse rounded-md hover:bg-gray-100 hover:scale-105 transition transform duration-300 ease-in-out`}>
                     <Image
                         className="w-[40px] mr-1 object-contain aspect-square"
                         src={logo?.value?.imageUrl ?? '/images/unavailable-image.png'}

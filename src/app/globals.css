@@ -33,10 +33,6 @@ body {
   @apply w-full;
 }
 
-.prose {
-  overflow-x: auto;
-}
-
 .prose  h1, .prose  h2, .prose  h3, .prose  h4, .prose  h5, .prose  h6 {
   font-weight: bold;
   line-height: 1.25;
@@ -64,7 +60,7 @@ body {
 }
 
 .prose ul, .prose ol {
-  margin-left: 1.3rem;
+  margin-left: 1.8rem;
   margin-bottom: 1rem;
   list-style: initial;
   color: black;
@@ -77,6 +73,7 @@ body {
 .prose ol {
   list-style-type: decimal;
 }
+
 
 .prose li {
   margin-bottom: 0.5rem;

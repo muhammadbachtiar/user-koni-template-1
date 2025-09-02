@@ -32,7 +32,7 @@ const Footer = () => {
                                             </div>
                                         </div>
 
-                                    <div className="col-span-4 lg:col-span-2 flex flex-col gap-6">
+                                    <div className="col-span-4 lg:col-span-2 flex flex-col gap-4">
                                         <div className="w-full flex flex-wrap gap-6 justify-start">
                                             <div className="h-10 w-10 bg-gray-300 rounded"></div>
                                             <div className="h-10 w-10 bg-gray-300 rounded"></div>
@@ -63,7 +63,7 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div className="col-span-4 lg:col-span-1 text-start">
-                                <div className="w-full flex flex-wrap gap-6 justify-start">
+                                <div className="w-full flex flex-wrap gap-4 justify-start lg:justify-center lg:items-center">
                                     {
                                         setting?.value?.socialMedia ? Object.entries(setting.value.socialMedia as Record<string, { profileUrl: string }>).map(([key, value]) => {
                                         const Icon = sosmedIcons[key] ?? sosmedIcons.FaQuestion; 

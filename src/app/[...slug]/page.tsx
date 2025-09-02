@@ -5,6 +5,8 @@ import Link from "next/link";
 import SettingService from "@/services/controlers/setting/setting.service";
 import { formatMetadata } from "@/services/utils/generate-seo";
 import { Metadata } from "next";
+import { validateAndRedirect } from "@/services/utils/shouldRedirect";
+import { redirect } from "next/navigation";
 
 function findMenuItemByPath(
   items: MenuWithContent,
@@ -77,15 +79,15 @@ interface DynamicPageProps {
 export default async function DynamicPage({
   params,
 }: DynamicPageProps & PageProps) {
+  const unwrappedParams = await params;
+  const path = Array.isArray(unwrappedParams.slug)
+      ? unwrappedParams.slug
+      : [];
   try {
-    const unwrappedParams = await params;
     const { data: menu } = await SettingService.getSetting(
       `menu-${process.env.NEXT_PUBLIC_VILLAGE_ID}`,
       {}
     );
-    const path = Array.isArray(unwrappedParams.slug)
-      ? unwrappedParams.slug
-      : [];
     const menuItem = Array.isArray(menu?.value)
       ? findMenuItemByPath(menu.value, path)
       : null;
@@ -103,6 +105,13 @@ export default async function DynamicPage({
       </div>
     );
   } catch {
+     if (validateAndRedirect(path)) {
+      const redirects: Record<string, string> = {
+      tour: '/tour',
+      article: '/article',
+      };
+      return redirect(redirects[path[0]] || '/');
+    }
     return (
       <div className="flex flex-col text-center items-center justify-center h-screen w-full text-gray-700">
         <h1 className="text-4xl font-bold">404 - Page Not Found</h1>
